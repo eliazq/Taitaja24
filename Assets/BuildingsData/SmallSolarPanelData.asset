@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 291ee23fa50ed18438fb2286141724b7, type: 3}
   m_Name: SmallSolarPanelData
   m_EditorClassIdentifier: 
+  name: smallsolarpanel
   cost: 10000
-  Co2Emission: 0.003
-  cooldown: 30
-  Income: 1000
+  Co2Emission: 0
+  cooldown: 0.5
+  Income: 20
