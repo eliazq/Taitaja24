@@ -1,0 +1,80 @@
+{
+    "items": [
+        {
+            "name": "SETUP",
+            "textColor": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "backgroundColor": {
+                "r": 0.5660377740859985,
+                "g": 0.5660377740859985,
+                "b": 0.5660377740859985,
+                "a": 1.0
+            },
+            "fontStyle": 0,
+            "fontSize": 12,
+            "textAlignment": 4,
+            "backgroundImageType": 0
+        },
+        {
+            "name": "ENVIRONMENT",
+            "textColor": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "backgroundColor": {
+                "r": 0.12353049218654633,
+                "g": 0.6415094137191773,
+                "b": 0.09985760599374771,
+                "a": 1.0
+            },
+            "fontStyle": 0,
+            "fontSize": 12,
+            "textAlignment": 4,
+            "backgroundImageType": 0
+        },
+        {
+            "name": "PLAYER",
+            "textColor": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "backgroundColor": {
+                "r": 0.0,
+                "g": 0.7203593254089356,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "fontStyle": 0,
+            "fontSize": 12,
+            "textAlignment": 4,
+            "backgroundImageType": 0
+        },
+        {
+            "name": "MANAGERS",
+            "textColor": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "backgroundColor": {
+                "r": 0.6008113026618958,
+                "g": 0.004716992378234863,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "fontStyle": 0,
+            "fontSize": 12,
+            "textAlignment": 4,
+            "backgroundImageType": 0
+        }
+    ]
+}
