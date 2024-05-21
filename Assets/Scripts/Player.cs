@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
@@ -6,13 +7,21 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public static Player Instance;
-
+    public event EventHandler OnMoneyChanged;
     [SerializeField] private LayerMask gridPlatformLayer;
     [SerializeField] private Material gridPlatformSelectedMaterial;
     [SerializeField] private GameObject selectedBuildingPrefab;
     [SerializeField] private GameObject[] buildingPrefabs;
-
-    public int Money { get; private set; } = 9000000; // 9M
+    private int money;
+    public int Money 
+    {
+        get { return money; }
+        private set 
+        { 
+            money = value;
+            OnMoneyChanged?.Invoke(this, EventArgs.Empty);
+        }
+    }
     public float CO2TotalEmission { get; set; }
     private Material gridPlatformMaterial;
     GameObject lastSelectedGridPlatform;
@@ -23,6 +32,11 @@ public class Player : MonoBehaviour
             Instance = this;
         else if (Instance != this)
             Destroy(gameObject);
+    }
+
+    private void Start()
+    {
+        Money = 9000000; // 9M For debuging
     }
 
     private void Update()
