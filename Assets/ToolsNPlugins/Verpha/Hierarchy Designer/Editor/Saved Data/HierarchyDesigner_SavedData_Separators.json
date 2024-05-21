@@ -17,7 +17,7 @@
             "fontStyle": 0,
             "fontSize": 12,
             "textAlignment": 4,
-            "backgroundImageType": 7
+            "backgroundImageType": 0
         },
         {
             "name": "ENVIRONMENT",
@@ -36,7 +36,45 @@
             "fontStyle": 0,
             "fontSize": 12,
             "textAlignment": 4,
-            "backgroundImageType": 7
+            "backgroundImageType": 0
+        },
+        {
+            "name": "PLAYER",
+            "textColor": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "backgroundColor": {
+                "r": 0.0,
+                "g": 0.7203593254089356,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "fontStyle": 0,
+            "fontSize": 12,
+            "textAlignment": 4,
+            "backgroundImageType": 0
+        },
+        {
+            "name": "MANAGERS",
+            "textColor": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "backgroundColor": {
+                "r": 0.6008113026618958,
+                "g": 0.004716992378234863,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "fontStyle": 0,
+            "fontSize": 12,
+            "textAlignment": 4,
+            "backgroundImageType": 0
         }
     ]
 }

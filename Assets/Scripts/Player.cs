@@ -5,11 +5,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance;
+
     [SerializeField] private LayerMask gridPlatformLayer;
     [SerializeField] private Material gridPlatformSelectedMaterial;
+    [SerializeField] private GameObject selectedBuildingPrefab;
 
+    public int Money { get; private set; } = 9000000; // 9M
     private Material gridPlatformMaterial;
     GameObject lastSelectedGridPlatform;
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else if (Instance != this)
+            Destroy(gameObject);
+    }
 
     private void Update()
     {
@@ -23,6 +35,15 @@ public class Player : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, 1000, gridPlatformLayer))
         {
+            if (Input.GetMouseButtonDown(0))
+            {
+                // Mouse Clicked While Hovering Platform
+                if (hit.collider.TryGetComponent(out BuildingPlatform buildingPlatform) && !buildingPlatform.hasBuilding)
+                {
+                    BuildingManager.Instance.BuyBuilding(selectedBuildingPrefab.GetComponent<Building>(), hit.transform.position);
+                    buildingPlatform.hasBuilding = true;
+                }
+            }
             if (hit.collider.TryGetComponent(out MeshRenderer meshRenderer))
             {
                 // Selected grid Platform is changed, change the old selected material to its normal mat
@@ -39,5 +60,15 @@ public class Player : MonoBehaviour
         }
         else if (lastSelectedGridPlatform != null && lastSelectedGridPlatform.GetComponent<MeshRenderer>().material != gridPlatformMaterial)
             lastSelectedGridPlatform.GetComponent<MeshRenderer>().material = gridPlatformMaterial;
+    }
+
+    public void GetPaid(int amount)
+    {
+        Money += amount;
+    }
+
+    public void Pay(int amount)
+    {
+        Money -= amount;
     }
 }

@@ -4647,6 +4647,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 574263936}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &580726669
+GameObject:
+  m_ObjectHideFlags: 8
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 580726670}
+  m_Layer: 0
+  m_Name: //PLAYER
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &580726670
+Transform:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 580726669}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &588732172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6416,6 +6447,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 700563001}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &708765672
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 708765673}
+  - component: {fileID: 708765674}
+  m_Layer: 0
+  m_Name: BuildingManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &708765673
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708765672}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &708765674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708765672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59bc1f60989a8974ba38c9899d082c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &725069250
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8222,6 +8297,37 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1035456761}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1049778350
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1049778351}
+  m_Layer: 0
+  m_Name: //MANAGERS
+  m_TagString: EditorOnly
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1049778351
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049778350}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.216784, y: 38.58939, z: -76.815384}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1050502910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12976,6 +13082,8 @@ MonoBehaviour:
     m_Bits: 64
   gridPlatformSelectedMaterial: {fileID: 2100000, guid: 7126bd3d4a5bac84bb5db5eb680e8df3,
     type: 2}
+  selectedBuildingPrefab: {fileID: 5795436094052138191, guid: b54d9c65885b1e14882c7b4f47404aea,
+    type: 3}
 --- !u!1001 &1919281459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14603,4 +14711,7 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 1488935332}
   - {fileID: 449304300}
+  - {fileID: 580726670}
   - {fileID: 1905493153}
+  - {fileID: 1049778351}
+  - {fileID: 708765673}
