@@ -8,5 +8,19 @@ public class Building : MonoBehaviour
 
     public BuildingDataSO Data { get {  return buildingDataSO; } }
 
+    float processTimer;
+    private void Update()
+    {
+        processTimer += Time.deltaTime;
+
+        if (processTimer >= buildingDataSO.cooldown)
+        {
+            processTimer = 0;
+            Player.Instance.GetPaid(buildingDataSO.Income);
+            Player.Instance.CO2TotalEmission += buildingDataSO.Co2Emission;
+            Debug.Log("Got Paid by " + gameObject.name);
+        }
+    }
+
 
 }

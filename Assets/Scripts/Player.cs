@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject selectedBuildingPrefab;
 
     public int Money { get; private set; } = 9000000; // 9M
+    public float CO2TotalEmission { get; set; }
     private Material gridPlatformMaterial;
     GameObject lastSelectedGridPlatform;
 
