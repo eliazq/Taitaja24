@@ -72,8 +72,8 @@ public class Player : MonoBehaviour
                 // Mouse Clicked While Hovering Platform
                 if (hit.collider.TryGetComponent(out BuildingPlatform buildingPlatform) && !buildingPlatform.hasBuilding && selectedBuildingPrefab != null)
                 {
-                    BuildingManager.Instance.BuyBuilding(selectedBuildingPrefab.GetComponent<Building>(), hit.transform.position);
-                    buildingPlatform.hasBuilding = true;
+                    if (BuildingManager.Instance.BuyBuilding(selectedBuildingPrefab.GetComponent<Building>(), hit.transform.position))
+                        buildingPlatform.hasBuilding = true;
                 }
             }
             if (hit.collider.TryGetComponent(out MeshRenderer meshRenderer))
