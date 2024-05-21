@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private LayerMask gridPlatformLayer;
     [SerializeField] private Material gridPlatformSelectedMaterial;
     [SerializeField] private GameObject selectedBuildingPrefab;
+    [SerializeField] private GameObject[] buildingPrefabs;
 
     public int Money { get; private set; } = 9000000; // 9M
     public float CO2TotalEmission { get; set; }
@@ -29,6 +30,22 @@ public class Player : MonoBehaviour
         HandleGrid();
     }
 
+    public void SelectBuilding(string buildingName)
+    {
+        bool foundMatch = false;
+        foreach(GameObject building in buildingPrefabs)
+        {
+            if (buildingName == building.GetComponent<Building>().Data.name)
+            {
+                selectedBuildingPrefab = building;
+                foundMatch = true;
+                break;
+            }
+        }
+        if (!foundMatch) selectedBuildingPrefab = null;
+        
+    }
+
     private void HandleGrid()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -39,7 +56,7 @@ public class Player : MonoBehaviour
             if (Input.GetMouseButtonDown(0))
             {
                 // Mouse Clicked While Hovering Platform
-                if (hit.collider.TryGetComponent(out BuildingPlatform buildingPlatform) && !buildingPlatform.hasBuilding)
+                if (hit.collider.TryGetComponent(out BuildingPlatform buildingPlatform) && !buildingPlatform.hasBuilding && selectedBuildingPrefab != null)
                 {
                     BuildingManager.Instance.BuyBuilding(selectedBuildingPrefab.GetComponent<Building>(), hit.transform.position);
                     buildingPlatform.hasBuilding = true;
