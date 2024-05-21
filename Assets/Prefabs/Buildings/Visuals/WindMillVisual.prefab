@@ -125,7 +125,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9181673650875121022}
-  - component: {fileID: 6187351017296735635}
+  - component: {fileID: 8206308444792141758}
   m_Layer: 0
   m_Name: BladeParent
   m_TagString: Untagged
@@ -149,27 +149,19 @@ Transform:
   - {fileID: 8887108401512158157}
   m_Father: {fileID: 836855571004880722}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &6187351017296735635
-Animator:
-  serializedVersion: 5
+--- !u!114 &8206308444792141758
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9068960153565074515}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e3abad446f2bc974db8584319f87a0ac, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46aa9260c5a801741bd1ea0999858549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotateSpeed: 110
 --- !u!1 &9154008636092437128
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,7 +18,6 @@ public class Building : MonoBehaviour
             processTimer = 0;
             Player.Instance.GetPaid(buildingDataSO.Income);
             Player.Instance.CO2TotalEmission += buildingDataSO.Co2Emission;
-            Debug.Log("Got Paid by " + gameObject.name);
         }
     }
 
