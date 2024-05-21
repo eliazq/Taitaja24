@@ -1,0 +1,42 @@
+{
+    "items": [
+        {
+            "name": "SETUP",
+            "textColor": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "backgroundColor": {
+                "r": 0.5660377740859985,
+                "g": 0.5660377740859985,
+                "b": 0.5660377740859985,
+                "a": 1.0
+            },
+            "fontStyle": 0,
+            "fontSize": 12,
+            "textAlignment": 4,
+            "backgroundImageType": 7
+        },
+        {
+            "name": "ENVIRONMENT",
+            "textColor": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+            },
+            "backgroundColor": {
+                "r": 0.12353049218654633,
+                "g": 0.6415094137191773,
+                "b": 0.09985760599374771,
+                "a": 1.0
+            },
+            "fontStyle": 0,
+            "fontSize": 12,
+            "textAlignment": 4,
+            "backgroundImageType": 7
+        }
+    ]
+}
