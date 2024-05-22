@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     public event EventHandler OnMoneyChanged;
     public event EventHandler<OnTaxEventArgs> OnTaxPay;
     public event EventHandler OnBuildingPlaced;
+    public event EventHandler OnBuildingRemoved;
     public class OnTaxEventArgs : EventArgs
     {
         public int tax;
@@ -98,6 +99,7 @@ public class Player : MonoBehaviour
                     Destroy(buildingFromPlatform);
                     hit.transform.GetComponent<BuildingPlatform>().hasBuilding = false;
                     GetPaid((int)moneyReturn);
+                    OnBuildingRemoved?.Invoke(this, EventArgs.Empty);
                 }
             }
             else if (Input.GetMouseButtonDown(1))
@@ -110,6 +112,7 @@ public class Player : MonoBehaviour
                     Destroy(buildingFromPlatform);
                     hit.transform.GetComponent<BuildingPlatform>().hasBuilding = false;
                     GetPaid((int)moneyReturn);
+                    OnBuildingRemoved?.Invoke(this, EventArgs.Empty);
                 }
             }
             if (hit.collider.TryGetComponent(out MeshRenderer meshRenderer))
