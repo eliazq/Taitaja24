@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     public static Player Instance;
     public event EventHandler OnMoneyChanged;
     public event EventHandler<OnTaxEventArgs> OnTaxPay;
+    public event EventHandler OnBuildingPlaced;
     public class OnTaxEventArgs : EventArgs
     {
         public int tax;
@@ -84,7 +85,10 @@ public class Player : MonoBehaviour
                 if (hit.collider.TryGetComponent(out BuildingPlatform buildingPlatform) && !buildingPlatform.hasBuilding && selectedBuildingPrefab != null)
                 {
                     if (BuildingManager.Instance.BuyBuilding(selectedBuildingPrefab.GetComponent<Building>(), hit.transform))
+                    {
                         buildingPlatform.hasBuilding = true;
+                        OnBuildingPlaced?.Invoke(this, EventArgs.Empty);
+                    }
                 }
                 else if (buildingPlatform.hasBuilding && selectedBuildingPrefab == null)
                 {
