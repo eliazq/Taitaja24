@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 291ee23fa50ed18438fb2286141724b7, type: 3}
-  m_Name: BigWindTurbineData
+  m_Name: BigCoalMinerData
   m_EditorClassIdentifier: 
-  name: bigwindturbine
+  name: bigcoalminer
   cost: 2500
-  Co2Emission: 0
-  cooldown: 1
-  Income: 25
+  Co2Emission: 1
+  cooldown: 8
+  Income: 500

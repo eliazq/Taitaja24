@@ -16,4 +16,4 @@ MonoBehaviour:
   cost: 1800
   Co2Emission: 0.01
   cooldown: 0.5
-  Income: 6
+  Income: 9
