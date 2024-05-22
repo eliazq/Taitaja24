@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class CO2Warning : MonoBehaviour
 {
     [SerializeField] private GameObject[] emissionParticles;
+    [SerializeField] private VolumeProfile volume;
     private enum WarningStates
     {
         none,
@@ -32,7 +35,19 @@ public class CO2Warning : MonoBehaviour
                 break;
             case WarningStates.none:
                 SetParticlesActive(0);
+                if (volume.TryGet(out ChannelMixer mixer))
+                {
+                    mixer.redOutGreenIn.value = 0;
+                }
                 break;
+        }
+    }
+
+    private void OnApplicationQuit()
+    {
+        if (volume.TryGet(out ChannelMixer mixer))
+        {
+            mixer.redOutGreenIn.value = 0;
         }
     }
 
@@ -55,16 +70,29 @@ public class CO2Warning : MonoBehaviour
     private void SmallWarning()
     {
         SetParticlesActive(1);
+        if(volume.TryGet(out ChannelMixer mixer))
+        {
+            mixer.redOutGreenIn.value = 15;
+        }
+        
     }
 
     private void NormalWarning()
     {
         SetParticlesActive(2);
+        if (volume.TryGet(out ChannelMixer mixer))
+        {
+            mixer.redOutGreenIn.value = 30;
+        }
     }
 
     private void HighWarning()
     {
         SetParticlesActive(4);
+        if (volume.TryGet(out ChannelMixer mixer))
+        {
+            mixer.redOutGreenIn.value = 50;
+        }
     }
 
     private void SetParticlesActive(int amount)

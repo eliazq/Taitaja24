@@ -39664,6 +39664,7 @@ MonoBehaviour:
   - {fileID: 36227615}
   - {fileID: 308291524}
   - {fileID: 979197231}
+  volume: {fileID: 11400000, guid: a6560a915ef98420e9faacc1c7438823, type: 2}
 --- !u!4 &975005992
 Transform:
   m_ObjectHideFlags: 0
