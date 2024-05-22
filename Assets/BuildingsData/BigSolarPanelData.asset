@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 291ee23fa50ed18438fb2286141724b7, type: 3}
-  m_Name: SolarPanelData
+  m_Name: BigSolarPanelData
   m_EditorClassIdentifier: 
-  name: smallsolarpanel
-  cost: 500
-  Co2Emission: 0.04
+  name: bigsolarpanels
+  cost: 1800
+  Co2Emission: 0.01
   cooldown: 0.5
-  Income: 2
+  Income: 6
