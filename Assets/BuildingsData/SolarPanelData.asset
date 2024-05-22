@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: SolarPanelData
   m_EditorClassIdentifier: 
   name: smallsolarpanel
-  cost: 250
+  cost: 500
   Co2Emission: 0.05
   cooldown: 0.5
   Income: 2
