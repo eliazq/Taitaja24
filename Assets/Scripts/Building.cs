@@ -21,7 +21,7 @@ public class Building : MonoBehaviour
         {
             processTimer = 0;
             Player.Instance.GetPaid(buildingDataSO.Income);
-            Player.Instance.CO2TotalEmission += buildingDataSO.Co2Emission;
+            CO2EmissionManager.Instance.TotalCO2Emission += buildingDataSO.Co2Emission;
         }
         progressBar.fillAmount = processTimer / buildingDataSO.cooldown;
     }

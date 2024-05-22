@@ -8,9 +8,11 @@ public class CO2EmissionManager : MonoBehaviour
     public static CO2EmissionManager Instance;
 
     public float CO2Emission { get; private set; }
+    public float TotalCO2Emission { get; set; }
     private float taxRate; // Tax rate as a percentage
 
     [SerializeField] private TextMeshProUGUI emissionText;
+    [SerializeField] private TextMeshProUGUI totalEmissionText;
 
     [SerializeField] private float baseTaxRate = 0.1f; // Base tax rate as a percentage (10% in this example)
     [SerializeField] private float taxInterval = 10f; // Interval in seconds for tax collection
@@ -44,7 +46,9 @@ public class CO2EmissionManager : MonoBehaviour
         }
 
         CO2Emission = emissions;
+        
         emissionText.text = "CO2: " + CO2Emission.ToString("F2");
+        totalEmissionText.text = "Total CO2: " + TotalCO2Emission.ToString("F2");
 
         // Calculate the tax rate based on CO2 emission and base tax rate
         taxRate = CalculateTaxRate();

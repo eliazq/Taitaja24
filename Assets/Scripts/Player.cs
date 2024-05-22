@@ -28,8 +28,6 @@ public class Player : MonoBehaviour
             OnMoneyChanged?.Invoke(this, EventArgs.Empty);
         }
     }
-    public float CO2Emission { get; set; }
-    public float CO2TotalEmission { get; set; }
     private Material gridPlatformMaterial;
     GameObject lastSelectedGridPlatform;
 
