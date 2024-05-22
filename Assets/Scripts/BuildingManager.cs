@@ -14,11 +14,13 @@ public class BuildingManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public bool BuyBuilding(Building building, Vector3 spawnPosition)
+    public bool BuyBuilding(Building building, Transform buildingPlatform)
     {
         if (Player.Instance.Money >= building.Data.cost)
         {
-            Instantiate(building.gameObject, spawnPosition, Quaternion.identity);
+            GameObject newBuilding = Instantiate(building.gameObject, buildingPlatform);
+            newBuilding.transform.position = buildingPlatform.position;
+            newBuilding.transform.localPosition = Vector3.zero;
             Player.Instance.Pay(building.Data.cost);
             return true;
         }

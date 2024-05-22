@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: CoalMinerData
   m_EditorClassIdentifier: 
   name: coalminer
-  cost: 100000
-  Co2Emission: 0.065
-  cooldown: 10
-  Income: 10000
+  cost: 250
+  Co2Emission: 0.5
+  cooldown: 4
+  Income: 80
