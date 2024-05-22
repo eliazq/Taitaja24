@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Material gridPlatformSelectedMaterial;
     [SerializeField] private GameObject selectedBuildingPrefab;
     [SerializeField] private GameObject[] buildingPrefabs;
+    [SerializeField] private float moneyBackPercent = 0.25f;
     private int money;
     public int Money 
     {
@@ -36,7 +37,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        Money = 9000000; // 9M For debuging
+        Money = 500; // 9M For debuging
     }
 
     private void Update()
@@ -72,8 +73,29 @@ public class Player : MonoBehaviour
                 // Mouse Clicked While Hovering Platform
                 if (hit.collider.TryGetComponent(out BuildingPlatform buildingPlatform) && !buildingPlatform.hasBuilding && selectedBuildingPrefab != null)
                 {
-                    if (BuildingManager.Instance.BuyBuilding(selectedBuildingPrefab.GetComponent<Building>(), hit.transform.position))
+                    if (BuildingManager.Instance.BuyBuilding(selectedBuildingPrefab.GetComponent<Building>(), hit.transform))
                         buildingPlatform.hasBuilding = true;
+                }
+                else if (buildingPlatform.hasBuilding && selectedBuildingPrefab == null)
+                {
+                    // Remove Building
+                    GameObject buildingFromPlatform = hit.transform.GetChild(0).gameObject;
+                    float moneyReturn = buildingFromPlatform.GetComponent<Building>().Data.cost * moneyBackPercent;
+                    Destroy(buildingFromPlatform);
+                    hit.transform.GetComponent<BuildingPlatform>().hasBuilding = false;
+                    GetPaid((int)moneyReturn);
+                }
+            }
+            else if (Input.GetMouseButtonDown(1))
+            {
+                if (hit.collider.TryGetComponent(out BuildingPlatform buildingPlatform) && buildingPlatform.hasBuilding)
+                {
+                    // Remove Building
+                    GameObject buildingFromPlatform = hit.transform.GetChild(0).gameObject;
+                    float moneyReturn = buildingFromPlatform.GetComponent<Building>().Data.cost * moneyBackPercent;
+                    Destroy(buildingFromPlatform);
+                    hit.transform.GetComponent<BuildingPlatform>().hasBuilding = false;
+                    GetPaid((int)moneyReturn);
                 }
             }
             if (hit.collider.TryGetComponent(out MeshRenderer meshRenderer))

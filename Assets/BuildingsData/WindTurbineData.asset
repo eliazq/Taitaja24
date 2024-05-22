@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WindTurbineData
   m_EditorClassIdentifier: 
   name: windturbine
-  cost: 900000
-  Co2Emission: 0.0001
-  cooldown: 0.25
-  Income: 500
+  cost: 1000
+  Co2Emission: 0.01
+  cooldown: 1
+  Income: 20

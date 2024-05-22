@@ -9283,15 +9283,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.84313726}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.84313726}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 532991ad26fd645488e8bb9069c743b3, type: 3}
-  m_Type: 0
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -14927,6 +14927,7 @@ MonoBehaviour:
   - {fileID: 7994192290043689718, guid: f5228b38dd45d4d4389c8e2bc688d800, type: 3}
   - {fileID: 2604784746568590059, guid: 88a81955409cad34396f192ac8b99f28, type: 3}
   - {fileID: 7840484499394874147, guid: 6f307713153f96a4fb2d3f18757ec240, type: 3}
+  moneyBackPercent: 0.25
 --- !u!114 &1905493155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16168,7 +16169,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 90000$
+  m_text: 500$
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 732c8890b0d49d4498682b6c6465ee5f, type: 2}
   m_sharedMaterial: {fileID: 6962220378213718348, guid: 732c8890b0d49d4498682b6c6465ee5f,

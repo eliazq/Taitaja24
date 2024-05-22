@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OilRigData
   m_EditorClassIdentifier: 
   name: oilrig
-  cost: 50000
-  Co2Emission: 0.049
-  cooldown: 10
-  Income: 3500
+  cost: 125
+  Co2Emission: 0.1
+  cooldown: 8
+  Income: 32
