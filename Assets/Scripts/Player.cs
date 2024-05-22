@@ -13,16 +13,17 @@ public class Player : MonoBehaviour
     [SerializeField] private GameObject selectedBuildingPrefab;
     [SerializeField] private GameObject[] buildingPrefabs;
     [SerializeField] private float moneyBackPercent = 0.25f;
-    private int money;
-    public int Money 
+    private float money;
+    public float Money 
     {
         get { return money; }
         private set 
-        { 
+        {
             money = value;
             OnMoneyChanged?.Invoke(this, EventArgs.Empty);
         }
     }
+    public float CO2Emission { get; set; }
     public float CO2TotalEmission { get; set; }
     private Material gridPlatformMaterial;
     GameObject lastSelectedGridPlatform;
@@ -43,6 +44,12 @@ public class Player : MonoBehaviour
     private void Update()
     {
         HandleGrid();
+    }
+
+    [NaughtyAttributes.Button]
+    private void Get100()
+    {
+        GetPaid(100);
     }
 
     public void SelectBuilding(string buildingName)
@@ -124,5 +131,15 @@ public class Player : MonoBehaviour
     public void Pay(int amount)
     {
         Money -= amount;
+    }
+
+    public void PayTax()
+    {
+        // Calculate tax amount based on the tax rate obtained from CO2EmissionManager
+        float taxRate = CO2EmissionManager.Instance.GetTaxRate();
+        int taxAmount = (int)(Money * taxRate);
+
+        // Deduct tax from the player's money
+        Money -= taxAmount;
     }
 }

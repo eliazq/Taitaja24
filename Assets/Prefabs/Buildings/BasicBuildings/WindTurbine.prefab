@@ -143,6 +143,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: WindTurbine
       objectReference: {fileID: 0}
+    - target: {fileID: 8538370484659306657, guid: b54d9c65885b1e14882c7b4f47404aea,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 8538370484659306657, guid: b54d9c65885b1e14882c7b4f47404aea,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 12.75
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 7210482516662404900, guid: b54d9c65885b1e14882c7b4f47404aea, type: 3}

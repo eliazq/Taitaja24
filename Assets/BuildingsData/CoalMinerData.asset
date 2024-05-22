@@ -15,5 +15,5 @@ MonoBehaviour:
   name: coalminer
   cost: 250
   Co2Emission: 0.5
-  cooldown: 4
-  Income: 80
+  cooldown: 8
+  Income: 50
