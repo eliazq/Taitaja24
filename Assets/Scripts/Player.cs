@@ -8,6 +8,11 @@ public class Player : MonoBehaviour
 {
     public static Player Instance;
     public event EventHandler OnMoneyChanged;
+    public event EventHandler<OnTaxEventArgs> OnTaxPay;
+    public class OnTaxEventArgs : EventArgs
+    {
+        public int tax;
+    }
     [SerializeField] private LayerMask gridPlatformLayer;
     [SerializeField] private Material gridPlatformSelectedMaterial;
     [SerializeField] private GameObject selectedBuildingPrefab;
@@ -138,7 +143,7 @@ public class Player : MonoBehaviour
         // Calculate tax amount based on the tax rate obtained from CO2EmissionManager
         float taxRate = CO2EmissionManager.Instance.GetTaxRate();
         int taxAmount = (int)(Money * taxRate);
-
+        OnTaxPay?.Invoke(this, new OnTaxEventArgs { tax = taxAmount });
         // Deduct tax from the player's money
         Money -= taxAmount;
     }

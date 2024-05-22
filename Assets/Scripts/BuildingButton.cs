@@ -12,6 +12,7 @@ public class BuildingButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     [SerializeField] private TextMeshProUGUI costText;
     [SerializeField] private TextMeshProUGUI incomeText;
     [SerializeField] private TextMeshProUGUI cooldownText;
+    [SerializeField] private TextMeshProUGUI co2Text;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -19,6 +20,7 @@ public class BuildingButton : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         costText.text = "Cost " + buildingDataSO.cost.ToString() + "$";
         incomeText.text = "Income " + buildingDataSO.Income.ToString() + "$";
         cooldownText.text = "Production " + buildingDataSO.cooldown.ToString() + "s";
+        co2Text.text = "CO2 " + buildingDataSO.Co2Emission.ToString();
 
         infoContainer.SetActive(true);
     }
